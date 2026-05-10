@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -15,103 +16,104 @@
   *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
   body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:160px}
 
-  header{background:var(--blue);padding:16px 20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(26,15,181,.25)}
-  .htop{display:flex;align-items:center;gap:12px;padding-bottom:14px}
-  .pin{width:34px;height:34px;background:var(--red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(232,48,10,.4)}
-  .pin-inner{width:13px;height:13px;background:#fff;border-radius:50%;transform:rotate(45deg)}
-  .htitle h1{font-family:'Syne',sans-serif;font-weight:800;font-size:17px;color:#fff;line-height:1}
-  .htitle p{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
-  .spill{margin-left:auto;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:#fff}
-  .pbar{height:3px;background:rgba(255,255,255,.2)}
-  .pfill{height:100%;background:var(--red);transition:width .35s ease}
+header{background:var(–blue);padding:16px 20px 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(26,15,181,.25)}
+.htop{display:flex;align-items:center;gap:12px;padding-bottom:14px}
+.pin{width:34px;height:34px;background:var(–red);border-radius:50% 50% 50% 0;transform:rotate(-45deg);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(232,48,10,.4)}
+.pin-inner{width:13px;height:13px;background:#fff;border-radius:50%;transform:rotate(45deg)}
+.htitle h1{font-family:‘Syne’,sans-serif;font-weight:800;font-size:17px;color:#fff;line-height:1}
+.htitle p{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.spill{margin-left:auto;background:rgba(255,255,255,.18);border-radius:20px;padding:4px 12px;font-family:‘Syne’,sans-serif;font-size:12px;font-weight:700;color:#fff}
+.pbar{height:3px;background:rgba(255,255,255,.2)}
+.pfill{height:100%;background:var(–red);transition:width .35s ease}
 
-  .tabs{display:flex;overflow-x:auto;scrollbar-width:none;background:#fff;border-bottom:2px solid var(--border);padding:0 4px}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex-shrink:0;padding:11px 14px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--muted);border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
-  .tab.active{color:var(--blue);border-bottom-color:var(--blue)}
-  .tab.done{color:var(--green)}
-  .tab.done::after{content:' \2713'}
+.tabs{display:flex;overflow-x:auto;scrollbar-width:none;background:#fff;border-bottom:2px solid var(–border);padding:0 4px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex-shrink:0;padding:11px 14px;font-family:‘Syne’,sans-serif;font-size:12px;font-weight:700;color:var(–muted);border:none;background:none;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .2s;white-space:nowrap}
+.tab.active{color:var(–blue);border-bottom-color:var(–blue)}
+.tab.done{color:var(–green)}
+.tab.done::after{content:’ \2713’}
 
-  .section{display:none;padding:14px;animation:fi .22s ease}
-  .section.active{display:block}
-  @keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.section{display:none;padding:14px;animation:fi .22s ease}
+.section.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
-  .card{background:var(--card);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:var(--shadow);border:1px solid var(--border)}
-  .ctitle{font-family:'Syne',sans-serif;font-size:12px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
-  .cicon{width:22px;height:22px;background:var(--blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;color:#fff}
+.card{background:var(–card);border-radius:14px;padding:16px;margin-bottom:12px;box-shadow:var(–shadow);border:1px solid var(–border)}
+.ctitle{font-family:‘Syne’,sans-serif;font-size:12px;font-weight:700;color:var(–blue);text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.cicon{width:22px;height:22px;background:var(–blue);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;color:#fff}
 
-  .field{margin-bottom:14px}
-  label{display:block;font-size:11px;font-weight:600;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
-  .req{color:var(--red)}
-  input[type=text],input[type=number],input[type=time],select,textarea{width:100%;padding:11px 13px;border:2px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:#fff;-webkit-appearance:none;outline:none;transition:border-color .2s}
-  input:focus,select:focus,textarea:focus{border-color:var(--blue-light);box-shadow:0 0 0 3px rgba(79,99,245,.10)}
-  input[readonly]{background:#f7f8ff;color:var(--muted)}
-  textarea{resize:none;min-height:76px}
+.field{margin-bottom:14px}
+label{display:block;font-size:11px;font-weight:600;color:var(–muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.05em}
+.req{color:var(–red)}
+input[type=text],input[type=number],input[type=time],select,textarea{width:100%;padding:11px 13px;border:2px solid var(–border);border-radius:10px;font-family:‘DM Sans’,sans-serif;font-size:15px;color:var(–text);background:#fff;-webkit-appearance:none;outline:none;transition:border-color .2s}
+input:focus,select:focus,textarea:focus{border-color:var(–blue-light);box-shadow:0 0 0 3px rgba(79,99,245,.10)}
+input[readonly]{background:#f7f8ff;color:var(–muted)}
+textarea{resize:none;min-height:76px}
 
-  .btn-capture{width:100%;padding:15px;background:var(--blue);color:#fff;border:none;border-radius:12px;font-family:'Syne',sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(26,15,181,.25)}
-  .btn-capture:active{transform:scale(.97)}
-  .btn-capture.loading{background:var(--muted);pointer-events:none}
-  .btn-capture.done{background:var(--green)}
+.btn-capture{width:100%;padding:15px;background:var(–blue);color:#fff;border:none;border-radius:12px;font-family:‘Syne’,sans-serif;font-size:15px;font-weight:800;cursor:pointer;transition:all .2s;box-shadow:0 4px 16px rgba(26,15,181,.25)}
+.btn-capture:active{transform:scale(.97)}
+.btn-capture.loading{background:var(–muted);pointer-events:none}
+.btn-capture.done{background:var(–green)}
 
-  .rg,.cg{display:flex;flex-wrap:wrap;gap:8px}
-  .ro,.co{flex:1;min-width:72px}
-  .ro input,.co input{display:none}
-  .ro label,.co label{display:flex;align-items:center;justify-content:center;gap:5px;padding:9px 10px;border:2px solid var(--border);border-radius:10px;cursor:pointer;font-size:13px;font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0;background:#fff;transition:all .18s;text-align:center;line-height:1.2}
-  .ro input:checked+label,.co input:checked+label{border-color:var(--blue);background:#eef0ff;color:var(--blue);font-weight:700}
+.rg,.cg{display:flex;flex-wrap:wrap;gap:8px}
+.ro,.co{flex:1;min-width:72px}
+.ro input,.co input{display:none}
+.ro label,.co label{display:flex;align-items:center;justify-content:center;gap:5px;padding:9px 10px;border:2px solid var(–border);border-radius:10px;cursor:pointer;font-size:13px;font-weight:500;color:var(–muted);text-transform:none;letter-spacing:0;background:#fff;transition:all .18s;text-align:center;line-height:1.2}
+.ro input:checked+label,.co input:checked+label{border-color:var(–blue);background:#eef0ff;color:var(–blue);font-weight:700}
 
-  .alist{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
-  .achip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:10px;padding:10px 12px}
-  .achip.expected{border-style:dashed;background:#fafbff}
-  .achip.geocoded{background:#f0fdf4;border-color:#86efac}
-  .anum{width:26px;height:26px;background:var(--blue);border-radius:50%;color:#fff;font-family:'Syne',sans-serif;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-  .anum.expected{background:var(--muted)}
-  .anum.geocoded{background:var(--green)}
-  .ainfo{flex:1;min-width:0}
-  .aname{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .acoords{font-size:11px;color:var(--muted);margin-top:1px}
-  .aact{display:flex;gap:2px}
-  .bico{background:none;border:none;padding:6px;cursor:pointer;font-size:15px;border-radius:6px;transition:background .15s}
-  .bico:active{background:var(--bg)}
+.alist{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.achip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(–border);border-radius:10px;padding:10px 12px}
+.achip.expected{border-style:dashed;background:#fafbff}
+.achip.geocoded{background:#f0fdf4;border-color:#86efac}
+.anum{width:26px;height:26px;background:var(–blue);border-radius:50%;color:#fff;font-family:‘Syne’,sans-serif;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.anum.expected{background:var(–muted)}
+.anum.geocoded{background:var(–green)}
+.ainfo{flex:1;min-width:0}
+.aname{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.acoords{font-size:11px;color:var(–muted);margin-top:1px}
+.aact{display:flex;gap:2px}
+.bico{background:none;border:none;padding:6px;cursor:pointer;font-size:15px;border-radius:6px;transition:background .15s}
+.bico:active{background:var(–bg)}
 
-  .badd{width:100%;padding:11px;border:2px dashed var(--border);border-radius:10px;background:none;color:var(--blue-light);font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;margin-top:8px}
-  .badd:active{background:#eef0ff}
-  .badd-primary{background:var(--blue);color:#fff;border:none;padding:14px;font-size:14px;box-shadow:0 4px 14px rgba(26,15,181,.28)}
+.badd{width:100%;padding:11px;border:2px dashed var(–border);border-radius:10px;background:none;color:var(–blue-light);font-family:‘Syne’,sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;transition:all .2s;margin-top:8px}
+.badd:active{background:#eef0ff}
+.badd-primary{background:var(–blue);color:#fff;border:none;padding:14px;font-size:14px;box-shadow:0 4px 14px rgba(26,15,181,.28)}
 
-  .sens-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--border)}
-  .sens-icon{width:28px;height:28px;background:var(--blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex-shrink:0}
-  .sens-title{font-family:'Syne',sans-serif;font-size:13px;font-weight:800;color:var(--blue)}
-  .sens-prog{font-size:11px;color:var(--muted);margin-left:auto;font-weight:600}
+.sens-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(–border)}
+.sens-icon{width:28px;height:28px;background:var(–blue);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;flex-shrink:0}
+.sens-title{font-family:‘Syne’,sans-serif;font-size:13px;font-weight:800;color:var(–blue)}
+.sens-prog{font-size:11px;color:var(–muted);margin-left:auto;font-weight:600}
 
-  .moverlay{display:none;position:fixed;inset:0;background:rgba(13,13,43,.55);z-index:200;align-items:flex-end;justify-content:center}
-  .moverlay.open{display:flex;animation:fi .18s ease}
-  .modal{background:#fff;border-radius:22px 22px 0 0;padding:20px 18px 44px;width:100%;max-height:88vh;overflow-y:auto;animation:su .28s ease}
-  @keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
-  .mhandle{width:38px;height:4px;background:var(--border);border-radius:2px;margin:0 auto 18px}
-  .mtitle{font-family:'Syne',sans-serif;font-size:17px;font-weight:800;color:var(--blue);margin-bottom:18px}
-  .mbtns{display:flex;gap:10px;margin-top:10px}
-  .bcancel{flex:1;padding:13px;border-radius:11px;border:2px solid var(--border);background:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(--muted)}
-  .bsave{flex:2;padding:13px;border-radius:11px;border:none;background:var(--blue);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(26,15,181,.28)}
+.moverlay{display:none;position:fixed;inset:0;background:rgba(13,13,43,.55);z-index:200;align-items:flex-end;justify-content:center}
+.moverlay.open{display:flex;animation:fi .18s ease}
+.modal{background:#fff;border-radius:22px 22px 0 0;padding:20px 18px 44px;width:100%;max-height:88vh;overflow-y:auto;animation:su .28s ease}
+@keyframes su{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.mhandle{width:38px;height:4px;background:var(–border);border-radius:2px;margin:0 auto 18px}
+.mtitle{font-family:‘Syne’,sans-serif;font-size:17px;font-weight:800;color:var(–blue);margin-bottom:18px}
+.mbtns{display:flex;gap:10px;margin-top:10px}
+.bcancel{flex:1;padding:13px;border-radius:11px;border:2px solid var(–border);background:#fff;font-family:‘Syne’,sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(–muted)}
+.bsave{flex:2;padding:13px;border-radius:11px;border:none;background:var(–blue);color:#fff;font-family:‘Syne’,sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(26,15,181,.28)}
 
-  .bnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:100;box-shadow:0 -4px 18px rgba(0,0,0,.07)}
-  .bprev{padding:13px 18px;border-radius:11px;border:2px solid var(--border);background:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(--blue);white-space:nowrap}
-  .bnext{flex:1;padding:13px;border-radius:11px;border:none;background:var(--blue);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(26,15,181,.28)}
-  .bexp{flex:1;padding:13px;border-radius:11px;border:none;background:var(--green);color:#fff;font-family:'Syne',sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,194,113,.28)}
-  .bprev:active,.bnext:active,.bexp:active{transform:scale(.97)}
+.bnav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(–border);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:100;box-shadow:0 -4px 18px rgba(0,0,0,.07)}
+.bprev{padding:13px 18px;border-radius:11px;border:2px solid var(–border);background:#fff;font-family:‘Syne’,sans-serif;font-weight:700;font-size:14px;cursor:pointer;color:var(–blue);white-space:nowrap}
+.bnext{flex:1;padding:13px;border-radius:11px;border:none;background:var(–blue);color:#fff;font-family:‘Syne’,sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(26,15,181,.28)}
+.bexp{flex:1;padding:13px;border-radius:11px;border:none;background:var(–green);color:#fff;font-family:‘Syne’,sans-serif;font-weight:700;font-size:14px;cursor:pointer;box-shadow:0 4px 14px rgba(0,194,113,.28)}
+.bprev:active,.bnext:active,.bexp:active{transform:scale(.97)}
 
-  .hbox{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);border-radius:14px;padding:16px;color:#fff;margin-bottom:12px;display:flex;gap:24px}
-  .bnum{font-family:'Syne',sans-serif;font-size:38px;font-weight:800;line-height:1}
-  .blbl{font-size:11px;opacity:.7;margin-top:3px}
-  .dv{width:1px;background:rgba(255,255,255,.2)}
-  .srow{margin-bottom:12px}
-  .slbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:2px}
-  .sval{font-size:14px;font-weight:500;color:var(--text)}
+.hbox{background:linear-gradient(135deg,var(–blue) 0%,var(–blue-light) 100%);border-radius:14px;padding:16px;color:#fff;margin-bottom:12px;display:flex;gap:24px}
+.bnum{font-family:‘Syne’,sans-serif;font-size:38px;font-weight:800;line-height:1}
+.blbl{font-size:11px;opacity:.7;margin-top:3px}
+.dv{width:1px;background:rgba(255,255,255,.2)}
+.srow{margin-bottom:12px}
+.slbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(–muted);margin-bottom:2px}
+.sval{font-size:14px;font-weight:500;color:var(–text)}
 
-  .alert{padding:11px 13px;border-radius:10px;font-size:13px;margin-bottom:12px;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
-  .ai{background:#eef0ff;color:var(--blue);border:1px solid #c5caff}
-  .aw{background:#fff4e5;color:#7a3c00;border:1px solid #ffd09b}
-  .as{background:#e6faf3;color:#005c35;border:1px solid #9fe0c3}
-  .tag{display:inline-flex;align-items:center;justify-content:center;background:var(--blue);color:#fff;border-radius:20px;font-family:'Syne',sans-serif;font-size:11px;font-weight:800;padding:2px 8px;margin-left:6px}
+.alert{padding:11px 13px;border-radius:10px;font-size:13px;margin-bottom:12px;display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.ai{background:#eef0ff;color:var(–blue);border:1px solid #c5caff}
+.aw{background:#fff4e5;color:#7a3c00;border:1px solid #ffd09b}
+.as{background:#e6faf3;color:#005c35;border:1px solid #9fe0c3}
+.tag{display:inline-flex;align-items:center;justify-content:center;background:var(–blue);color:#fff;border-radius:20px;font-family:‘Syne’,sans-serif;font-size:11px;font-weight:800;padding:2px 8px;margin-left:6px}
 </style>
+
 </head>
 <body>
 
@@ -134,6 +136,7 @@
 </div>
 
 <!-- SECTION 0 : MISSION -->
+
 <div class="section active" id="section-0">
   <div class="alert ai">ℹ️ Remplis ces infos avant de partir sur le terrain. La liste des arrêts à géocoder sera chargée automatiquement.</div>
 
@@ -268,6 +271,7 @@
 </div>
 
 <!-- SECTION 1 : ARRETS -->
+
 <div class="section" id="section-1">
   <div class="alert ai">📍 Tape sur un arrêt pour le géocoder. Capture le GPS quand tu es <strong>physiquement à l'arrêt</strong>. Aller et retour ont des coordonnées <strong>distinctes</strong>.</div>
 
@@ -276,6 +280,7 @@
   </div>
 
   <!-- Mode A : ligne avec arrêts pré-remplis (Ouaga, Bobo, Koudougou, etc.) -->
+
   <div id="lineContentPrefilled" style="display:none">
     <div class="card">
       <div class="sens-header">
@@ -286,50 +291,58 @@
       <div class="alist" id="aListAller"></div>
     </div>
 
-    <div class="card">
-      <div class="sens-header">
-        <div class="sens-icon" style="background:var(--red)">←</div>
-        <div class="sens-title" style="color:var(--red)">SENS RETOUR</div>
-        <div class="sens-prog" id="progRetour">0 / 0</div>
-      </div>
-      <div class="alist" id="aListRetour"></div>
-    </div>
+```
+<div class="card">
+  <div class="sens-header">
+    <div class="sens-icon" style="background:var(--red)">←</div>
+    <div class="sens-title" style="color:var(--red)">SENS RETOUR</div>
+    <div class="sens-prog" id="progRetour">0 / 0</div>
+  </div>
+  <div class="alist" id="aListRetour"></div>
+</div>
 
-    <div class="card">
-      <div class="ctitle"><span class="cicon">+</span> Arrêts bonus (non listés)</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:10px">Si tu trouves un arrêt qui n'est pas dans la liste, ajoute-le ici.</div>
-      <div class="alist" id="aListBonus"></div>
-      <button class="badd" onclick="openModal(-1, 'bonus')">＋ Ajouter un arrêt bonus</button>
-    </div>
+<div class="card">
+  <div class="ctitle"><span class="cicon">+</span> Arrêts bonus (non listés)</div>
+  <div style="font-size:12px;color:var(--muted);margin-bottom:10px">Si tu trouves un arrêt qui n'est pas dans la liste, ajoute-le ici.</div>
+  <div class="alist" id="aListBonus"></div>
+  <button class="badd" onclick="openModal(-1, 'bonus')">＋ Ajouter un arrêt bonus</button>
+</div>
+```
+
   </div>
 
   <!-- Mode B : ligne sans arrêts pré-remplis (collecte libre — Fada, Koupela, Gaoua, Manga) -->
+
   <div id="lineContentFree" style="display:none">
     <div class="alert aw">🆕 <strong>Nouvelle ville :</strong> les arrêts ne sont pas pré-remplis. Tu vas collecter tous les arrêts de la ligne (aller + retour) directement sur le terrain.</div>
 
-    <div class="card">
-      <div class="sens-header">
-        <div class="sens-icon">→</div>
-        <div class="sens-title">SENS ALLER</div>
-        <div class="sens-prog" id="freeProgAller">0 arrêts</div>
-      </div>
-      <div class="alist" id="aListFreeAller"></div>
-      <button class="badd badd-primary" onclick="openModal(-1, 'freeAller')">＋ Ajouter un arrêt aller</button>
-    </div>
+```
+<div class="card">
+  <div class="sens-header">
+    <div class="sens-icon">→</div>
+    <div class="sens-title">SENS ALLER</div>
+    <div class="sens-prog" id="freeProgAller">0 arrêts</div>
+  </div>
+  <div class="alist" id="aListFreeAller"></div>
+  <button class="badd badd-primary" onclick="openModal(-1, 'freeAller')">＋ Ajouter un arrêt aller</button>
+</div>
 
-    <div class="card">
-      <div class="sens-header">
-        <div class="sens-icon" style="background:var(--red)">←</div>
-        <div class="sens-title" style="color:var(--red)">SENS RETOUR</div>
-        <div class="sens-prog" id="freeProgRetour">0 arrêts</div>
-      </div>
-      <div class="alist" id="aListFreeRetour"></div>
-      <button class="badd badd-primary" onclick="openModal(-1, 'freeRetour')" style="background:var(--red);box-shadow:0 4px 14px rgba(232,48,10,.22)">＋ Ajouter un arrêt retour</button>
-    </div>
+<div class="card">
+  <div class="sens-header">
+    <div class="sens-icon" style="background:var(--red)">←</div>
+    <div class="sens-title" style="color:var(--red)">SENS RETOUR</div>
+    <div class="sens-prog" id="freeProgRetour">0 arrêts</div>
+  </div>
+  <div class="alist" id="aListFreeRetour"></div>
+  <button class="badd badd-primary" onclick="openModal(-1, 'freeRetour')" style="background:var(--red);box-shadow:0 4px 14px rgba(232,48,10,.22)">＋ Ajouter un arrêt retour</button>
+</div>
+```
+
   </div>
 </div>
 
 <!-- SECTION 2 : NOTES -->
+
 <div class="section" id="section-2">
   <div class="alert aw">📝 Tes observations terrain sont précieuses pour l'équipe CityMoov.</div>
 
@@ -359,6 +372,7 @@
 </div>
 
 <!-- SECTION 3 : EXPORT -->
+
 <div class="section" id="section-3">
   <div class="hbox">
     <div><div class="bnum" id="sNGeo">0</div><div class="blbl">Arrêts géocodés</div></div>
@@ -387,70 +401,74 @@
 </div>
 
 <!-- MODAL ARRET -->
+
 <div class="moverlay" id="moverlay">
   <div class="modal">
     <div class="mhandle"></div>
     <div class="mtitle" id="mtitle">📍 Arrêt</div>
 
-    <div class="field">
-      <label>Nom de l'arrêt <span class="req">*</span></label>
-      <input type="text" id="mNom" placeholder="Ex : Marché de Zogona" autocomplete="off">
-    </div>
+```
+<div class="field">
+  <label>Nom de l'arrêt <span class="req">*</span></label>
+  <input type="text" id="mNom" placeholder="Ex : Marché de Zogona" autocomplete="off">
+</div>
 
-    <div class="field">
-      <label>📡 GPS + Heure (capture sur place)</label>
-      <button class="btn-capture" id="btnCapture" onclick="captureGPS()">📡 Capturer GPS + Heure maintenant</button>
+<div class="field">
+  <label>📡 GPS + Heure (capture sur place)</label>
+  <button class="btn-capture" id="btnCapture" onclick="captureGPS()">📡 Capturer GPS + Heure maintenant</button>
 
-      <div id="captureResult" style="display:none;margin-top:8px;background:#e6faf3;border:1px solid #9fe0c3;border-radius:10px;padding:10px 12px">
-        <div style="display:flex;gap:8px;margin-bottom:6px">
-          <div style="flex:1;background:#fff;border:1px solid #9fe0c3;border-radius:8px;padding:8px;text-align:center">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:2px">GPS</div>
-            <div id="captureCoords" style="font-size:11px;font-weight:700;color:#005c35;line-height:1.5">—</div>
-          </div>
-          <div style="flex:1;background:#fff;border:1px solid #9fe0c3;border-radius:8px;padding:8px;text-align:center">
-            <div style="font-size:10px;color:var(--muted);margin-bottom:2px">Heure</div>
-            <div id="captureTime" style="font-size:22px;font-weight:800;color:#005c35;font-family:'Syne',sans-serif">—</div>
-          </div>
-        </div>
-        <div id="capturePrecision" style="font-size:11px;color:#005c35;text-align:center"></div>
+  <div id="captureResult" style="display:none;margin-top:8px;background:#e6faf3;border:1px solid #9fe0c3;border-radius:10px;padding:10px 12px">
+    <div style="display:flex;gap:8px;margin-bottom:6px">
+      <div style="flex:1;background:#fff;border:1px solid #9fe0c3;border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">GPS</div>
+        <div id="captureCoords" style="font-size:11px;font-weight:700;color:#005c35;line-height:1.5">—</div>
       </div>
-
-      <div id="gpsTip" style="font-size:12px;color:var(--red);margin-top:6px;font-weight:600;line-height:1.5"></div>
-
-      <div style="margin-top:10px">
-        <div style="font-size:11px;color:var(--muted);margin-bottom:6px">GPS ne marche pas ? Saisis manuellement :</div>
-        <div style="display:flex;gap:6px">
-          <input type="text" id="mLat" placeholder="Latitude" inputmode="decimal" style="flex:1;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px">
-          <input type="text" id="mLon" placeholder="Longitude" inputmode="decimal" style="flex:1;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px">
-        </div>
-        <input type="time" id="mHeure" placeholder="Heure" style="margin-top:6px;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px;width:100%">
+      <div style="flex:1;background:#fff;border:1px solid #9fe0c3;border-radius:8px;padding:8px;text-align:center">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:2px">Heure</div>
+        <div id="captureTime" style="font-size:22px;font-weight:800;color:#005c35;font-family:'Syne',sans-serif">—</div>
       </div>
     </div>
+    <div id="capturePrecision" style="font-size:11px;color:#005c35;text-align:center"></div>
+  </div>
 
-    <div class="field">
-      <label>Type d'arrêt</label>
-      <div class="rg">
-        <div class="ro"><input type="radio" name="mType" id="mtD" value="Départ"><label for="mtD">🚏 Départ</label></div>
-        <div class="ro"><input type="radio" name="mType" id="mtM" value="Milieu" checked><label for="mtM">📍 Milieu</label></div>
-        <div class="ro"><input type="radio" name="mType" id="mtT" value="Terminus"><label for="mtT">🏁 Terminus</label></div>
-      </div>
+  <div id="gpsTip" style="font-size:12px;color:var(--red);margin-top:6px;font-weight:600;line-height:1.5"></div>
+
+  <div style="margin-top:10px">
+    <div style="font-size:11px;color:var(--muted);margin-bottom:6px">GPS ne marche pas ? Saisis manuellement :</div>
+    <div style="display:flex;gap:6px">
+      <input type="text" id="mLat" placeholder="Latitude" inputmode="decimal" style="flex:1;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px">
+      <input type="text" id="mLon" placeholder="Longitude" inputmode="decimal" style="flex:1;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px">
     </div>
+    <input type="time" id="mHeure" placeholder="Heure" style="margin-top:6px;padding:9px;border:2px solid var(--border);border-radius:8px;font-size:13px;width:100%">
+  </div>
+</div>
 
-    <div class="field">
-      <label>Signalisation</label>
-      <div class="rg">
-        <div class="ro"><input type="radio" name="mSig" id="msP" value="Panneau"><label for="msP">✅ Panneau</label></div>
-        <div class="ro"><input type="radio" name="mSig" id="msA" value="Abri"><label for="msA">🏠 Abri</label></div>
-        <div class="ro"><input type="radio" name="mSig" id="msN" value="Aucune" checked><label for="msN">❌ Aucune</label></div>
-      </div>
-    </div>
+<div class="field">
+  <label>Type d'arrêt</label>
+  <div class="rg">
+    <div class="ro"><input type="radio" name="mType" id="mtD" value="Départ"><label for="mtD">🚏 Départ</label></div>
+    <div class="ro"><input type="radio" name="mType" id="mtM" value="Milieu" checked><label for="mtM">📍 Milieu</label></div>
+    <div class="ro"><input type="radio" name="mType" id="mtT" value="Terminus"><label for="mtT">🏁 Terminus</label></div>
+  </div>
+</div>
 
-    <div class="field"><label>Note (optionnelle)</label><input type="text" id="mNote" placeholder="Ex : près du grand baobab, à côté de la pharmacie..."></div>
+<div class="field">
+  <label>Signalisation</label>
+  <div class="rg">
+    <div class="ro"><input type="radio" name="mSig" id="msP" value="Panneau"><label for="msP">✅ Panneau</label></div>
+    <div class="ro"><input type="radio" name="mSig" id="msA" value="Abri"><label for="msA">🏠 Abri</label></div>
+    <div class="ro"><input type="radio" name="mSig" id="msN" value="Aucune" checked><label for="msN">❌ Aucune</label></div>
+  </div>
+</div>
 
-    <div class="mbtns">
-      <button class="bcancel" onclick="closeModal()">Annuler</button>
-      <button class="bsave" onclick="saveArret()">✓ Enregistrer</button>
-    </div>
+<div class="field"><label>Note (optionnelle)</label><input type="text" id="mNote" placeholder="Ex : près du grand baobab, à côté de la pharmacie..."></div>
+
+<div class="mbtns">
+  <button class="bcancel" onclick="closeModal()">Annuler</button>
+  <button class="bsave" onclick="saveArret()">✓ Enregistrer</button>
+</div>
+```
+
   </div>
 </div>
 
@@ -540,7 +558,7 @@ function sendFinalAndExport() {
     document.getElementById('expAlert').style.display = 'flex';
     exportCSV();
   }).catch(function(e) {
-    btn.textContent = '?? Envoyer à l'equipe'; btn.disabled = false;
+    btn.textContent = "📤 Envoyer à l'équipe"; btn.disabled = false;
     alert('Erreur reseau. Le CSV va se telecharger.');
     exportCSV();
   });
@@ -1113,5 +1131,6 @@ document.getElementById('moverlay').addEventListener('click', function(e) {
 
 refreshNav();
 </script>
+
 </body>
 </html>
